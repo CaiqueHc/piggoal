@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meta</title>
+    <link rel="icon" href="money-bag.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <video autoplay muted loop id="myVideo">       
+		<source src="dollarback.mp4" type="video/mp4">
+    </video>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            color: White;
+            height: auto;
+            width: auto;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            animation: rainbow 0.6s linear infinite;
+            font-size: 120px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        }
+
+        p {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9)
+        }
+
+        @keyframes rainbow {
+            0% {
+                color: red;
+            }
+
+            10% {
+                color: orange;
+            }
+
+            20% {
+                color: yellow;
+            }
+
+            30% {
+                color: green;
+            }
+
+            40% {
+                color: blue;
+            }
+
+            50% {
+                color: indigo;
+            }
+
+            60% {
+                color: violet;
+            }
+
+            70% {
+                color: red;
+            }
+
+            100% {
+                color: red;
+            }
+        }
+
+        /* Estilos do botão */
+        #myBtn1 {
+            background: linear-gradient(to bottom, #4CAF50, #388E3C);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 25px;
+            cursor: pointer;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            /* adicionando bordas arredondadas */
+        }
+
+        /* Estilos do botão */
+        #myBtn2 {
+            background: linear-gradient(to bottom, #4CAF50, #388E3C);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 25px;
+            cursor: pointer;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            /* adicionando bordas arredondadas */
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        #musica {
+            position: absolute;
+            min-width: 0%;
+            min-height: 0%;
+            z-index: -2;
+        }
+
+        /* Estilos do popup */
+        .popup {
+            position: absolute;
+            display: none;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            color: black;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Estilos do popup */
+        .popup2 {
+            position: absolute;
+            display: none;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            color: black;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .popup-content {
+            font-family: 'Amatic SC', cursive;
+            background-color: #fff;
+            color: #333;
+            padding: 50px;
+            width: 500px;
+            border-radius: 20px;
+            font-size: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: popup 0.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .popup-content2 {
+            font-family: 'Amatic SC', cursive;
+            background-color: #fff;
+            color: #333;
+            padding: 50px;
+            width: 500px;
+            border-radius: 20px;
+            font-size: 50px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: popup 0.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes popup {
+            from {
+                transform: translate(-50%, -70%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popup2 {
+            from {
+                transform: translate(-50%, -70%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            animation: overlay 0.5s ease-in-out forwards;
+        }
+
+        .popup-overlay2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            animation: overlay 0.5s ease-in-out forwards;
+        }
+
+        @keyframes overlay {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes overlay2 {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="dollar.gif" alt="dollar" width="300">
+    <h1>PARABÉNS PELA META ALCANÇADA!</h1>
+    <p>Veja as metas nos botões</p>
+    <img src="porco.gif" alt="porco" width="200">
+    <button id="myBtn1">Orçado</button>
+    <div id="myPopup" class="popup">
+        <span class="popup-content">Esta é a meta orçado para a semana! R$ 2.000.000,00 </span>
+    </div>
+    <button id="myBtn2">Realizado</button>
+    <div id="myPopup2" class="popup2">
+        <span class="popup-content2">Esta é a meta realizada para a semana! R$ 3.000.000,00 </span>
+    </div>
+    <script>
+        // Quando o mouse passa sobre o botão, mostra o popup
+        document.getElementById("myBtn1").addEventListener("mouseover", function () {
+            document.getElementById("myPopup").style.display = "block";
+        });
+
+        // Quando o mouse sai do botão, esconde o popup
+        document.getElementById("myBtn1").addEventListener("mouseout", function () {
+            document.getElementById("myPopup").style.display = "none";
+        });
+        // Quando o mouse passa sobre o botão, mostra o popup
+        document.getElementById("myBtn2").addEventListener("mouseover", function () {
+            document.getElementById("myPopup2").style.display = "block";
+        });
+
+        // Quando o mouse sai do botão, esconde o popup
+        document.getElementById("myBtn2").addEventListener("mouseout", function () {
+            document.getElementById("myPopup2").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
